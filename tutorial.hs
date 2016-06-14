@@ -1,0 +1,12 @@
+--Aprende Haskell por el bien de todos
+--Podemos cambiar el prompt "Prelude>" mediante :set prompt "el pront que queramos asi entre comillas" 
+-- && (and) || (or) not (negar) == (comparacion de igualdad) /= (comparacion de distinto)
+--succ - devuelve el succesor de un elemento
+-- * funcion infija -> 4 * 8
+-- succ funcion prefija -> succ 7 (8)
+-- argumentos separados por espacios
+-- las funciones tienen mas prioridad que los operadores
+-- succ 9 * 10 = (succ 9) * 10
+-- las prefijas de dos parametros se pueden llamar como infijas
+-- 9 `min` 10
+-- div -> division entera. / -> division decimal
