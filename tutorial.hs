@@ -37,3 +37,20 @@ elemento = listaA !! 0 --H
 -- length (tamaño), null (esVacia), reverse (invierte), take n lista (saca n elementos de una lista), 
 -- drop n lista (elimina n elementos por el principio)
 -- sum (suma de elementos), elem num lista (num esta en lista?)
+listaIntensional = [x*5 | x <- [1..100], even x]
+
+length' x = sum [1 | _ <-x]
+-- _ significa cualquier cosa
+--listas Intensionales anidadas
+listaIntensional2 = [[xxx | xxx <- xx, even xxx] | xx <- [[1..10],[12..36]]]
+
+-- Tuplas: se escriben con (), y se usan cuando sabes los valores que vas a tener. Similares a listas
+-- No son homogeneas. Las tuplas tienen su propio tipo, por lo que suponen una restriccion cuando 
+-- queremos tener una lista de elementos que sean a su vez pares o tripletes de elementos.
+-- Comparamos tuplas de mismo tamaño. fst y snd funcionan solo con duplas
+-- zip
+dupla_zip = zip [1..10] ['A'..]
+-- podemos dejar uno de los limites sin especificar y haskell decide cuando parar
+-- se adapta la lista resultado a la lista de entrada mas corta
+
+
