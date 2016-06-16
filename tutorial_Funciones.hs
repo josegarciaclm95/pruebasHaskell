@@ -40,8 +40,18 @@ sum' (x:xs) = x + sum' xs
 funcLista::[a] -> String
 funcLista x 
 		| length x <= 1 = "Menor o igual que 1"
-		| otherwise = "Mayor que 1 (otherwise)"
+		| otherwise = "Mayor que " ++ vari ++ " (otherwise)"
+		where vari = "1"
 funcLista x = "Mayor que 1"
+
+{--
+funcLista'::[a] -> String
+funcLista' [] = "Menor o igual que " ++ var
+funcLista' x:[] = "Menor o igual que" ++ var
+funcLista x:y:_ = "Mayor que " ++ var
+	where var = " 1 "
+--}	
+
 --se puede definir una funcion de forma infija llamandola asi `funcion` en los patrones
 -- se pueden usar variables en las guardas definiendolas despues de la palabra clave 'where'
 bmiTell :: (RealFloat a) => a -> a -> String
