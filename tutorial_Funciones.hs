@@ -66,3 +66,33 @@ calcBmis :: (RealFloat a) => [(a, a)] -> [a]
 calcBmis xs = [bmi w h | (w, h) <- xs]
     where bmi weight height = weight / height ^ 2
 --Se define la funcion auxiliar bmi en el where de calcBmis
+
+initials :: [a] -> String
+initials [] = "vacia"
+initials (x:xs) = "longitud es " ++ show len
+	where len = length (x:xs) 
+
+-- let <definicion> in <expresion>
+-- es como where pero mas local
+
+sumaListSize :: [a] -> [b] -> Int
+sumaListSize (h:t) (x:xs) = 
+			let size1 = length (h:t)
+			in size1 + length (x:xs)
+
+--en algunos sitios he visto el let con los elementos separados solo por salto de linea, sin ;
+funcion2:: [a] -> String
+funcion2 (x:xs) = 
+	let size = length (x:xs);
+		size1 = length xs;
+		cosa = "Hola mundo en let"
+	in show size ++ " "  ++ show size1 ++ " " ++ cosa
+
+-- podemos definir funciones con let
+listaD = let cuadrado x = x * x in [cuadrado 2, cuadrado 3, cuadrado 4]
+
+head' :: [a] -> a
+head' xs = case xs of [] -> error "Lista vacia";
+						(x:_) -> x
+
+-- case puede usarse en cualquier sitio, no solo en una funcion. Ej. En sustitucion de ifs
