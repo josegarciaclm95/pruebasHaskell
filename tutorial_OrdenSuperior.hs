@@ -1,5 +1,6 @@
 --tutorial orden superior
 import Data.Char
+import Data.List
 
 predicado :: (Num a, Ord a) => a -> Bool
 predicado x = x >= 5
@@ -23,6 +24,10 @@ generator x y z
 generator x y z = takeWhile(<=y) [x, x+z..]
 
 toJadenCase :: String -> String
-toJadenCase (x:y:z) 
-			| x == " " = x : toJadenCase $ (toUpper y:z)
-			| otherwise = x : toJadenCase (y:z)
+toJadenCase x = unwords [toUpper (head y): map toLower (tail y) | y <- words x]
+
+removeSmallest :: [Int] -> [Int]
+removeSmallest xs = 
+	[x | x <- xs, not (elem (elemIndex x xs) (elemIndices (minimum xs) xs))]
+--elemIndex (minimum xs) devuelve el indice de la primera vez que aparece el minimo
+--cuando hacemos elemIndex x xs de un valor que resulta ser el minimo, nos devuelve el del primero
